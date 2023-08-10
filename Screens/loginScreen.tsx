@@ -32,7 +32,7 @@ export default function Login({ navigation }) {
                             Esqueceu a senha?
                         </Link>
                     </FormControl>
-                    <Button mt="2" colorScheme="orange">
+                    <Button onPress={() => navigation.navigate('MainAction')} mt="2" colorScheme="orange">
                         Entrar
                     </Button>
                     <HStack mt="6" justifyContent="center">
