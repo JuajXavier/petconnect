@@ -3,27 +3,35 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { NativeBaseProvider, ScrollView, View, Heading, AspectRatio, Image, HStack, Text, Stack, Box } from "native-base";
 
 
-export default function MainAction({ navigation }) {
-
-    const onPressPetRegistration = () => {
-        navigation.navigate('PetRegistration');
+export default function PetType ({ navigation }) {
+    
+    const onPressCat = () => {
+        const params = {
+            type: "cat"
+        }
+        navigation.navigate('AdoptionList', {params})
     }
 
-
+    const onPressDog = () => {
+        const params = {
+            type: "dog"
+        }
+        navigation.navigate('AdoptionList', {params})
+    }
+    
     return <NativeBaseProvider>
-
         <ScrollView backgroundColor="white">
 
-            <Heading marginTop={8} marginRight={4} alignSelf="center" size="lg" fontWeight="600" color="coolGray.800" _dark={{
+            <Heading marginTop={8} marginRight={8} marginLeft={8} alignSelf="center" size="lg" fontWeight="600" color="coolGray.800" _dark={{
                 color: "warmGray.50"
             }}>
-                Escolha uma das opções!
+                Que tipo de pet você gostaria de adotar?
             </Heading>
 
             <View style={{ marginTop: 30, }}>
-                <TouchableOpacity onPress={() => navigation.navigate('PetType')}>
+                <TouchableOpacity onPress={onPressDog}>
 
-                    <Box alignItems="center" paddingBottom={4}>
+                    <Box alignItems="center" paddingBottom={8}>
                         <Box maxW="80" rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
                             borderColor: "coolGray.600",
                             backgroundColor: "gray.700"
@@ -35,20 +43,20 @@ export default function MainAction({ navigation }) {
                         }}>
                             <Box>
                                 <AspectRatio w="100%" ratio={16 / 9}>
-                                    <Image height={40} width={80} source={require('../assets/adoption1.jpeg')} alt="image" />
+                                    <Image height={40} width={80} source={require('../assets/dog.jpeg')} alt="image" />
                                 </AspectRatio>
                             </Box>
                             <Stack p="4" space={3}>
                                 <Stack space={2}>
                                     <Heading size="md" ml="-1">
-                                        Quero adotar!
+                                        Cachorros
                                     </Heading>
                                     <Text fontSize="xs" _light={{
                                         color: "orange"
                                     }} _dark={{
                                         color: "orange"
                                     }} fontWeight="500" ml="-0.5" mt="-1">
-                                        Por aqui você terá acesso à lista de pets para adoção!
+                                        Clique aqui para acessar os cães disponíveis para adoção.
                                     </Text>
                                 </Stack>
                             </Stack>
@@ -56,7 +64,7 @@ export default function MainAction({ navigation }) {
                     </Box>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={onPressPetRegistration}>
+                <TouchableOpacity onPress={onPressCat}>
 
                     <Box alignItems="center">
                         <Box maxW="80" rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
@@ -70,20 +78,20 @@ export default function MainAction({ navigation }) {
                         }}>
                             <Box>
                                 <AspectRatio w="100%" ratio={16 / 9}>
-                                    <Image height={40} width={80} source={require('../assets/adoption2.jpeg')} alt="image" />
+                                    <Image height={40} width={80} source={require('../assets/cat.jpeg')} alt="image" />
                                 </AspectRatio>
                             </Box>
                             <Stack p="4" space={3}>
                                 <Stack space={2}>
                                     <Heading size="md" ml="-1">
-                                        Colocar para adoção.
+                                        Gatos
                                     </Heading>
                                     <Text fontSize="xs" _light={{
                                         color: "orange"
                                     }} _dark={{
                                         color: "orange"
                                     }} fontWeight="500" ml="-0.5" mt="-1">
-                                        Resgatou um bichinho? Ajude-o a encontrar um novo lar!
+                                        Clique aqui para acessar os gatos disponíveis para adoção.
                                     </Text>
                                 </Stack>
                             </Stack>
