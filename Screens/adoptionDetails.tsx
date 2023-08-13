@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, NativeBaseProvider, Button, Image, AspectRatio, Center, Stack, Text, HStack, Heading, ScrollView } from 'native-base';
+import { Linking } from 'react-native';
 
 export default function AdoptionDetails({ navigation }) {
 
@@ -8,7 +9,9 @@ export default function AdoptionDetails({ navigation }) {
     }
 
     const handleWhatsapp = () => {
-        
+        Linking.openURL(
+            'http://api.whatsapp.com/send?phone=+5561991373884'
+          );
     }
 
     return <NativeBaseProvider>
