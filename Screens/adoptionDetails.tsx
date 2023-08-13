@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, NativeBaseProvider, Button, Image, AspectRatio, Center, Stack, Text, HStack, Heading, ScrollView } from 'native-base';
+import { Box, Menu, Pressable, HamburgerIcon, NativeBaseProvider, Button, Image, AspectRatio, Center, Stack, Text, HStack, Heading, ScrollView } from 'native-base';
 import { Linking } from 'react-native';
 
 export default function AdoptionDetails({ navigation }) {
@@ -10,12 +10,22 @@ export default function AdoptionDetails({ navigation }) {
 
     const handleWhatsapp = () => {
         Linking.openURL(
-            'http://api.whatsapp.com/send?phone=+5561991373884'
-          );
+            'http://api.whatsapp.com/send?phone=61991373884'
+        );
     }
 
     return <NativeBaseProvider>
 
+        <Box w="190%" alignItems="center" backgroundColor='white'>
+            <Menu w="190" trigger={triggerProps => {
+                return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
+                    <HamburgerIcon />
+                </Pressable>;
+            }}>
+                <Menu.Item onPress={() => navigation.navigate('MainAction')}>Tela principal</Menu.Item>
+                <Menu.Item onPress={() => navigation.navigate('PetType')}>Adotar Pet</Menu.Item>
+            </Menu>
+        </Box>
         <ScrollView backgroundColor='white'>
             <Heading marginTop={8} marginRight={8} marginLeft={8} alignSelf="center" size="lg" fontWeight="600" color="coolGray.800" _dark={{
                 color: "warmGray.50"
@@ -66,7 +76,7 @@ export default function AdoptionDetails({ navigation }) {
                             </HStack>
                         </HStack>
                     </Stack>
-            <Button mt="2" colorScheme="green" onPress={handleWhatsapp}>
+                    <Button mt="2" colorScheme="green" onPress={handleWhatsapp}>
 
                         Entre em contato via whatsapp!
                     </Button>

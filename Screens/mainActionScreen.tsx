@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { NativeBaseProvider, ScrollView, View, Heading, AspectRatio, Image, HStack, Text, Stack, Box } from "native-base";
+import { NativeBaseProvider, Menu, Pressable, HamburgerIcon, ScrollView, View, Heading, AspectRatio, Image, HStack, Text, Stack, Box } from "native-base";
 
 
 export default function MainAction({ navigation }) {
@@ -12,6 +12,16 @@ export default function MainAction({ navigation }) {
 
     return <NativeBaseProvider>
 
+        <Box w="190%" alignItems="center" backgroundColor='white'>
+            <Menu w="190" trigger={triggerProps => {
+                return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
+                    <HamburgerIcon />
+                </Pressable>;
+            }}>
+                <Menu.Item onPress={() => navigation.navigate('MainAction')}>Tela principal</Menu.Item>
+                <Menu.Item onPress={() => navigation.navigate('PetType')}>Adotar Pet</Menu.Item>
+            </Menu>
+        </Box>
         <ScrollView backgroundColor="white">
 
             <Heading marginTop={8} marginRight={4} alignSelf="center" size="lg" fontWeight="600" color="coolGray.800" _dark={{

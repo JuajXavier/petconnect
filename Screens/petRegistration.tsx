@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform } from 'react-native';
-import { VStack, Image, FormControl, Select, CheckIcon, View, Heading, Input, Button, Center, NativeBaseProvider, ScrollView } from 'native-base'
+import { VStack, Image, Box, Menu, HamburgerIcon, Pressable, FormControl, Select, CheckIcon, View, Heading, Input, Button, Center, NativeBaseProvider, ScrollView } from 'native-base'
 import * as ImagePicker from 'expo-image-picker';
 
 export default function PetRegitration({ navigation }) {
@@ -70,6 +70,17 @@ export default function PetRegitration({ navigation }) {
     };
 
     return <NativeBaseProvider>
+
+        <Box w="190%" alignItems="center" backgroundColor='white'>
+            <Menu w="190" trigger={triggerProps => {
+                return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
+                    <HamburgerIcon />
+                </Pressable>;
+            }}>
+                <Menu.Item onPress={() => navigation.navigate('MainAction')}>Tela principal</Menu.Item>
+                <Menu.Item onPress={() => navigation.navigate('PetType')}>Adotar Pet</Menu.Item>
+            </Menu>
+        </Box>
         <ScrollView>
 
             <Heading padding={8} alignSelf="center" size="lg" fontWeight="600" color="coolGray.800" _dark={{
@@ -138,14 +149,14 @@ export default function PetRegitration({ navigation }) {
                 </FormControl>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} marginTop={8}>
                     <Button onPress={pickImage}>
-                    {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-                    Selecione uma imagem.
+                        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+                        Selecione uma imagem.
                     </Button>
                 </View>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} marginTop={8}>
                     <Button onPress={takePic}>
-                    {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-                    Tire uma foto.
+                        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+                        Tire uma foto.
                     </Button>
                 </View>
                 <Button onPress={onSubmit} mt="5" colorScheme="orange" marginBottom={10}>

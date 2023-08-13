@@ -1,5 +1,5 @@
 import React from "react";
-import { NativeBaseProvider, Box, Heading, FlatList, VStack, Text, Avatar, Spacer, HStack } from 'native-base';
+import { NativeBaseProvider, Menu, Pressable, HamburgerIcon, Box, Heading, FlatList, VStack, Text, Avatar, Spacer, HStack } from 'native-base';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function AdoptionList({ navigation }) {
@@ -93,6 +93,17 @@ export default function AdoptionList({ navigation }) {
     // console.log('data', data)
 
     return <NativeBaseProvider>
+
+        <Box w="190%" alignItems="center" backgroundColor='white'>
+            <Menu w="190" trigger={triggerProps => {
+                return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
+                    <HamburgerIcon />
+                </Pressable>;
+            }}>
+                <Menu.Item onPress={() => navigation.navigate('MainAction')}>Tela principal</Menu.Item>
+                <Menu.Item onPress={() => navigation.navigate('PetType')}>Adotar Pet</Menu.Item>
+            </Menu>
+        </Box>
         <Box>
             <Heading marginY={2} fontSize="xl" p="4" pb="3">
                 Pets para adoção

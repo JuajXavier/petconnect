@@ -17,15 +17,15 @@ export default function SignUp({ navigation }) {
                 </Heading>
 
                 <VStack space={3} mt="5">
-                    <FormControl>
+                    <FormControl isRequired>
                         <FormControl.Label>Email</FormControl.Label>
                         <Input />
                     </FormControl>
-                    <FormControl>
+                    <FormControl isRequired>
                         <FormControl.Label>Senha</FormControl.Label>
                         <Input type="password" />
                     </FormControl>
-                    <FormControl>
+                    <FormControl >
                         <FormControl.Label>Confirme a senha</FormControl.Label>
                         <Input type="password" />
                     </FormControl>

@@ -1,25 +1,36 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { NativeBaseProvider, ScrollView, View, Heading, AspectRatio, Image, HStack, Text, Stack, Box } from "native-base";
+import { NativeBaseProvider, Menu, Pressable, HamburgerIcon, ScrollView, View, Heading, AspectRatio, Image, HStack, Text, Stack, Box } from "native-base";
 
 
-export default function PetType ({ navigation }) {
-    
+export default function PetType({ navigation }) {
+
     const onPressCat = () => {
         const params = {
             type: "cat"
         }
-        navigation.navigate('AdoptionList', {params})
+        navigation.navigate('AdoptionList', { params })
     }
 
     const onPressDog = () => {
         const params = {
             type: "dog"
         }
-        navigation.navigate('AdoptionList', {params})
+        navigation.navigate('AdoptionList', { params })
     }
-    
+
     return <NativeBaseProvider>
+
+        <Box w="190%" alignItems="center" backgroundColor='white'>
+            <Menu w="190" trigger={triggerProps => {
+                return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
+                    <HamburgerIcon />
+                </Pressable>;
+            }}>
+                <Menu.Item onPress={() => navigation.navigate('MainAction')}>Tela principal</Menu.Item>
+                <Menu.Item onPress={() => navigation.navigate('PetType')}>Adotar Pet</Menu.Item>
+            </Menu>
+        </Box>
         <ScrollView backgroundColor="white">
 
             <Heading marginTop={8} marginRight={8} marginLeft={8} alignSelf="center" size="lg" fontWeight="600" color="coolGray.800" _dark={{
