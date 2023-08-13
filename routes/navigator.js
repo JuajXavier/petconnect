@@ -7,6 +7,7 @@ import SignUp from '../Screens/signUpScreen';
 import MainAction from '../Screens/mainActionScreen';
 import PetType from '../Screens/petType';
 import PetRegitration from '../Screens/petRegistration';
+import AdoptionList from '../Screens/adoptionList';
 
 const screens = {
     WelcomeScreen: {
@@ -26,6 +27,9 @@ const screens = {
     },
     PetRegistration: {
         screen: PetRegitration,
+    },
+    AdoptionList: {
+        screen: AdoptionList,
     }
 }
 
