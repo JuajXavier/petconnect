@@ -9,7 +9,7 @@ export default function AdoptionList({ navigation }) {
     }
 
     const onPressDetails = (petDetails: any) => {
-        navigation.navigate('PetDetails', {petDetails})
+        navigation.navigate('AdoptionDetails', petDetails)
     }
 
     const dogData = [{
@@ -99,7 +99,7 @@ export default function AdoptionList({ navigation }) {
             </Heading>
             <FlatList backgroundColor='white' data={data} renderItem={({
                 item
-            }) => <TouchableOpacity onPress={onPressDetails}>
+            }) => <TouchableOpacity onPress={() => onPressDetails(item)}>
                     <Box borderBottomWidth="1" _dark={{
                         borderColor: "muted.50"
                     }} borderColor="orange.500" pl={["4", "4"]} pr={["4", "5"]} py="2">

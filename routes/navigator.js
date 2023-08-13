@@ -8,6 +8,7 @@ import MainAction from '../Screens/mainActionScreen';
 import PetType from '../Screens/petType';
 import PetRegitration from '../Screens/petRegistration';
 import AdoptionList from '../Screens/adoptionList';
+import AdoptionDetails from '../Screens/adoptionDetails';
 
 const screens = {
     WelcomeScreen: {
@@ -30,6 +31,9 @@ const screens = {
     },
     AdoptionList: {
         screen: AdoptionList,
+    },
+    AdoptionDetails: {
+        screen: AdoptionDetails,
     }
 }
 

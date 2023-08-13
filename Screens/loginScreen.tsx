@@ -2,6 +2,15 @@ import React from "react";
 import { NativeBaseProvider, Center, Heading, VStack, FormControl, HStack, Text, Input, Link, Button, Box } from "native-base";
 
 export default function Login({ navigation }) {
+
+    // const [emptyFields, setEmptyFields] = React.useState(true);
+    // const [email, setEmail] = React.useState(false);
+    // const [password, setPassword] = React.useState('');
+
+    // console.log({ email, password })
+
+    // if (email) setEmptyFields(false);
+
     return <NativeBaseProvider>
         <Center w="100%">
             <Box safeArea p="2" py="8" w="90%" maxW="290">
@@ -17,13 +26,13 @@ export default function Login({ navigation }) {
                 </Heading>
 
                 <VStack space={3} mt="5">
-                    <FormControl>
+                    <FormControl isRequired>
                         <FormControl.Label>Email</FormControl.Label>
-                        <Input />
+                        <Input/>
                     </FormControl>
-                    <FormControl>
+                    <FormControl isRequired>
                         <FormControl.Label>Senha</FormControl.Label>
-                        <Input type="password" />
+                        <Input type="password"/>
                         <Link _text={{
                             fontSize: "xs",
                             fontWeight: "500",

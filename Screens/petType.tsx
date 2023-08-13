@@ -66,7 +66,7 @@ export default function PetType ({ navigation }) {
 
                 <TouchableOpacity onPress={onPressCat}>
 
-                    <Box alignItems="center">
+                    <Box alignItems="center" marginBottom={16}>
                         <Box maxW="80" rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
                             borderColor: "coolGray.600",
                             backgroundColor: "gray.700"

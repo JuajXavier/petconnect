@@ -3,12 +3,13 @@ import { Platform } from 'react-native';
 import { VStack, Image, FormControl, Select, CheckIcon, View, Heading, Input, Button, Center, NativeBaseProvider, ScrollView } from 'native-base'
 import * as ImagePicker from 'expo-image-picker';
 
-export default function PetRegitration() {
+export default function PetRegitration({ navigation }) {
     const [formData, setData] = React.useState({});
     const [errors, setErrors] = React.useState({});
     const [petType, setPetType] = React.useState({});
     const [isVaccinated, setIsVaccinated] = React.useState({});
     const [image, setImage] = React.useState(null);
+    // const [photo, setPhoto] = React.useState(null);
 
     const validateName = () => {
         if (formData.name === undefined) {
@@ -30,6 +31,8 @@ export default function PetRegitration() {
 
     const onSubmit = () => {
         validateName() ? console.log('Submitted') : console.log('Validation Failed');
+
+        navigation.navigate('MainAction')
     };
 
 
@@ -37,6 +40,23 @@ export default function PetRegitration() {
         // No permissions request is necessary for launching the image library
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        console.log(result);
+
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
+    };
+
+    const takePic = async () => {
+        // No permissions request is necessary for launching the image library
+        let result = await ImagePicker.launchCameraAsync({
+            // mediaTypes: ImagePicker.MediaTypeOptions.All,
+            // cameraType: ImagePicker.getCameraPermissionsAsync(),
             allowsEditing: true,
             aspect: [4, 3],
             quality: 1,
@@ -107,13 +127,28 @@ export default function PetRegitration() {
                         <Select.Item label="Não sei" value="NS" />
                     </Select>
                 </FormControl>
+                <FormControl isRequired>
+                    <FormControl.Label _text={{
+                        bold: true
+                    }}>Número para contato</FormControl.Label>
+                    <Input placeholder="Descrição do pet" onChangeText={value => setData({
+                        ...formData,
+                        phoneNumber: value
+                    })} />
+                </FormControl>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} marginTop={8}>
                     <Button onPress={pickImage}>
                     {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
                     Selecione uma imagem.
                     </Button>
                 </View>
-                <Button onPress={onSubmit} mt="5" colorScheme="orange">
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} marginTop={8}>
+                    <Button onPress={takePic}>
+                    {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+                    Tire uma foto.
+                    </Button>
+                </View>
+                <Button onPress={onSubmit} mt="5" colorScheme="orange" marginBottom={10}>
                     Registrar
                 </Button>
             </VStack>
