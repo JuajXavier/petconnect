@@ -17,75 +17,75 @@ export default function AdoptionList({ navigation }) {
         fullName: "Átila",
         timeStamp: "10/02",
         recentText: "Vacinado",
-        avatarUrl: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        avatarUrl: "https://images.pexels.com/photos/3687770/pexels-photo-3687770.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
         fullName: "Luke",
         timeStamp: "11/11",
         recentText: "Vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyEaZqT3fHeNrPGcnjLLX1v_W4mvBlgpwxnA&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/3687770/pexels-photo-3687770.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "58694a0f-3da1-471f-bd96-145571e29d72",
         fullName: "Van",
         timeStamp: "09/10",
         recentText: "Não Vacinado",
-        avatarUrl: "https://miro.medium.com/max/1400/0*0fClPmIScV5pTLoE.jpg"
+        avatarUrl: "https://images.pexels.com/photos/3361739/pexels-photo-3361739.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "68694a0f-3da1-431f-bd56-142371e29d72",
         fullName: "Dogo",
         timeStamp: "10/10",
         recentText: "Vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr01zI37DYuR8bMV5exWQBSw28C1v_71CAh8d7GP1mplcmTgQA6Q66Oo--QedAN1B4E1k&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/3361739/pexels-photo-3361739.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "28694a0f-3da1-471f-bd96-142456e29d72",
         fullName: "Kiara",
         timeStamp: "22/05",
         recentText: "Vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=800"
     }];
 
     const catData = [{
         id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
         fullName: "Grumpy",
-        timeStamp: "10/02",
+        timeStamp: "12/08",
         recentText: "Vacinado",
-        avatarUrl: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        avatarUrl: "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
         fullName: "Marcel",
         timeStamp: "11/11",
         recentText: "Não vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyEaZqT3fHeNrPGcnjLLX1v_W4mvBlgpwxnA&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/982300/pexels-photo-982300.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "58694a0f-3da1-471f-bd96-145571e29d72",
         fullName: "Chin",
         timeStamp: "09/10",
         recentText: "Não Vacinado",
-        avatarUrl: "https://miro.medium.com/max/1400/0*0fClPmIScV5pTLoE.jpg"
+        avatarUrl: "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "68694a0f-3da1-431f-bd56-142371e29d72",
         fullName: "Roge",
         timeStamp: "10/10",
         recentText: "Não vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr01zI37DYuR8bMV5exWQBSw28C1v_71CAh8d7GP1mplcmTgQA6Q66Oo--QedAN1B4E1k&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/982300/pexels-photo-982300.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "28694a0f-3da1-471f-bd96-142456e29d72",
         fullName: "Crona",
         timeStamp: "22/05",
         recentText: "Vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/2928158/pexels-photo-2928158.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "28594a0f-3da1-471f-bd96-142456e29d72",
         fullName: "Nono",
         timeStamp: "22/06",
         recentText: "Vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=800"
     }, {
         id: "28794a0f-3da1-471f-bd96-142456e29d72",
         fullName: "Jujo",
         timeStamp: "28/05",
         recentText: "Vacinado",
-        avatarUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU"
+        avatarUrl: "https://images.pexels.com/photos/2928158/pexels-photo-2928158.jpeg?auto=compress&cs=tinysrgb&w=800"
     }];
 
     const data = navigationData.type[0] === 'c' ? catData : dogData;

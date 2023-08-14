@@ -63,8 +63,7 @@ export default function AdoptionDetails({ navigation }) {
                             </Text>
                         </Stack>
                         <Text fontWeight="400">
-                            Bengaluru (also called Bangalore) is the center of India's high-tech
-                            industry. The city is also known for its parks and nightlife.
+                            Dócil e tímido.
                         </Text>
                         <HStack alignItems="center" space={4} justifyContent="space-between">
                             <HStack alignItems="center">

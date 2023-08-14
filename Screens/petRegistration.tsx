@@ -142,7 +142,7 @@ export default function PetRegitration({ navigation }) {
                     <FormControl.Label _text={{
                         bold: true
                     }}>Número para contato</FormControl.Label>
-                    <Input placeholder="Descrição do pet" onChangeText={value => setData({
+                    <Input placeholder="Número" onChangeText={value => setData({
                         ...formData,
                         phoneNumber: value
                     })} />
